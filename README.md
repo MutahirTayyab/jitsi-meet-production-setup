@@ -4,6 +4,7 @@ This project documents a Docker-based deployment of Jitsi Meet on AWS EC2 with a
 
 ## Architecture
 <img width="4182" height="1549" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/19560106-e68f-460a-978e-cb881049a8ce" />
+
 ## Main Features
 
 - Jitsi Meet deployed with Docker Compose
