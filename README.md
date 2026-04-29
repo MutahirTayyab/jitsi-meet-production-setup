@@ -1,8 +1,4 @@
 # Jitsi Meet + Jibri Deployment on AWS EC2 using Docker
-Deployed Jitsi Meet on AWS EC2 with separate Jibri recording server using Docker Compose. Configured SSL, DNS, security groups, and recording services.
-
-
-# Jitsi Meet + Jibri Deployment on AWS EC2 using Docker
 
 This project documents a Docker-based deployment of Jitsi Meet on AWS EC2 with a separate Jibri recording server. The setup includes HTTPS, DNS, security group rules, Jibri recording configuration, and troubleshooting notes.
 
