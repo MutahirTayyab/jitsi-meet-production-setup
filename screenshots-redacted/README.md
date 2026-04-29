@@ -1,1 +1,0 @@
-These screenshots are automatically redacted at the browser/header level only. Review manually before publishing to GitHub. Remove or further blur any public IPs, AWS account IDs, instance IDs, key names, or private paths still visible.
