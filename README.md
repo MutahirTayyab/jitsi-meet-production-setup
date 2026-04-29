@@ -13,9 +13,8 @@ Jitsi EC2: web + prosody + jicofo + jvb
       | TCP 5222 XMPP
       v
 Jibri EC2: jibri recording containers
-<img width="4182" height="1549" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/19560106-e68f-460a-978e-cb881049a8ce" />
 ```
-
+<img width="4182" height="1549" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/19560106-e68f-460a-978e-cb881049a8ce" />
 ## Main Features
 
 - Jitsi Meet deployed with Docker Compose
