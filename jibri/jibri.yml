@@ -1,0 +1,100 @@
+services:
+  jibri1:
+    image: jitsi/jibri:stable
+    container_name: jibri1
+    restart: unless-stopped
+    shm_size: "2gb"
+    cap_add:
+      - SYS_ADMIN
+    # devices:
+    #   - /dev/snd:/dev/snd
+    volumes:
+      - ${CONFIG}/jibri1:/config
+      # - ${CONFIG}/jibri1/asoundrc:/home/jibri/.asoundrc
+    environment:
+      - DISPLAY=:0
+      - PUBLIC_URL
+      - TZ
+      - XMPP_SERVER
+      - XMPP_PORT
+      - JIBRI_XMPP_USER
+      - JIBRI_XMPP_PASSWORD
+      - JIBRI_BREWERY_MUC
+      - JIBRI_RECORDER_USER
+      - JIBRI_RECORDER_PASSWORD
+      - JIBRI_STRIP_DOMAIN_JID
+
+  jibri2:
+    image: jitsi/jibri:stable
+    container_name: jibri2
+    restart: unless-stopped
+    shm_size: "2gb"
+    cap_add:
+      - SYS_ADMIN
+    # devices:
+    #   - /dev/snd:/dev/snd
+    volumes:
+      - ${CONFIG}/jibri2:/config
+      # - ${CONFIG}/jibri2/asoundrc:/home/jibri/.asoundrc
+    environment:
+      - DISPLAY=:0
+      - PUBLIC_URL
+      - TZ
+      - XMPP_SERVER
+      - XMPP_PORT
+      - JIBRI_XMPP_USER
+      - JIBRI_XMPP_PASSWORD
+      - JIBRI_BREWERY_MUC
+      - JIBRI_RECORDER_USER
+      - JIBRI_RECORDER_PASSWORD
+      - JIBRI_STRIP_DOMAIN_JID
+
+  jibri3:
+    image: jitsi/jibri:stable
+    container_name: jibri3
+    restart: unless-stopped
+    shm_size: "2gb"
+    cap_add:
+      - SYS_ADMIN
+    # devices:
+    #   - /dev/snd:/dev/snd
+    volumes:
+      - ${CONFIG}/jibri3:/config
+      # - ${CONFIG}/jibri3/asoundrc:/home/jibri/.asoundrc
+    environment:
+      - DISPLAY=:0
+      - PUBLIC_URL
+      - TZ
+      - XMPP_SERVER
+      - XMPP_PORT
+      - JIBRI_XMPP_USER
+      - JIBRI_XMPP_PASSWORD
+      - JIBRI_BREWERY_MUC
+      - JIBRI_RECORDER_USER
+      - JIBRI_RECORDER_PASSWORD
+      - JIBRI_STRIP_DOMAIN_JID
+
+  jibri4:
+    image: jitsi/jibri:stable
+    container_name: jibri4
+    restart: unless-stopped
+    shm_size: "2gb"
+    cap_add:
+      - SYS_ADMIN
+    # devices:
+    #   - /dev/snd:/dev/snd
+    volumes:
+      - ${CONFIG}/jibri4:/config
+      # - ${CONFIG}/jibri4/asoundrc:/home/jibri/.asoundrc
+    environment:
+      - DISPLAY=:0
+      - PUBLIC_URL
+      - TZ
+      - XMPP_SERVER
+      - XMPP_PORT
+      - JIBRI_XMPP_USER
+      - JIBRI_XMPP_PASSWORD
+      - JIBRI_BREWERY_MUC
+      - JIBRI_RECORDER_USER
+      - JIBRI_RECORDER_PASSWORD
+      - JIBRI_STRIP_DOMAIN_JID
