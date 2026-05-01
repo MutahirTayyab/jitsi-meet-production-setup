@@ -94,6 +94,6 @@ nc -zv your-domain.example.com 5222
 
 ## Notes
 
--> One Jibri can handle one active recording. For four simultaneous recordings, four Jibri workers are required. On AWS EC2, running multiple Jibri containers on one host may have audio limitations because ALSA loopback may not be available on the AWS kernel.
--> So it is recommended to scale recorders on any other server rather than any Cloud Server.
--> One more thing to note in our practical we have used AWS Instance type m7i-flex-large which is  not enough for multiple recorders. So use that instance type which is full of resources so that multiple recorders can easily run!
+1. One Jibri can handle one active recording. For four simultaneous recordings, four Jibri workers are required. On AWS EC2, running multiple Jibri containers on one host may have audio limitations because ALSA loopback may not be available on the AWS kernel.
+2. It is recommended to scale recorders on any other server rather than any Cloud Server.
+3. One more thing to note in our practical we have used AWS Instance type m7i-flex-large which is  not enough for multiple recorders. So use that instance type which is full of resources so that multiple recorders can easily run!
