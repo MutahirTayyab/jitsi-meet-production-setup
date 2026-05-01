@@ -18,16 +18,18 @@ This project documents a Docker-based deployment of Jitsi Meet on AWS EC2 with a
 
 ```text
 .
-├── jitsi/
-│   ├── docker-compose.yml
-│   └── .env.example
-├── jibri/
-│   ├── jibri.yml
-│   └── .env.example
 ├── docs/
 │   ├── deployment-guide.md
-│   └── security-notes.md
-└── screenshots-redacted/
+├── jibri/
+│   ├── .env.example
+│   └── jibri.yml
+├── jitsi/
+│   ├── .env.example
+│   └── docker-compose.yml
+├── screenshots/
+├── .gitignore/
+├── LICENSE/
+└── README.md/
 ```
 
 ## Important Security Notice
