@@ -41,8 +41,8 @@ Real `.env` files, AWS PEM keys, SSL private keys, public IPs, instance IDs, and
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/jitsi-jibri-aws-deployment.git
-cd jitsi-jibri-aws-deployment
+git clone https://github.com/MutahirTayyab/jitsi-meet-production-setup.git
+cd jitsi-meet-production-setup
 ```
 
 ### 2. Prepare Jitsi EC2
@@ -50,7 +50,7 @@ cd jitsi-jibri-aws-deployment
 ```bash
 cd jitsi
 cp .env.example .env
-nano .env
+vi .env
 ```
 
 Replace placeholders such as:
@@ -59,6 +59,7 @@ Replace placeholders such as:
 PUBLIC_URL=https://your-domain.example.com
 JVB_ADVERTISE_IPS=YOUR_JITSI_PUBLIC_IP
 DOCKER_HOST_ADDRESS=YOUR_JITSI_PUBLIC_IP
+Note: Generate your own Passwords! (./gen-passwords.sh)
 ```
 
 Start Jitsi:
@@ -72,7 +73,7 @@ docker compose -f docker-compose.yml up -d
 ```bash
 cd jibri
 cp .env.example .env
-nano .env
+vi .env
 ```
 
 Make sure the Jibri passwords match the Jitsi `.env` values.
@@ -93,4 +94,6 @@ nc -zv your-domain.example.com 5222
 
 ## Notes
 
-One Jibri can handle one active recording. For four simultaneous recordings, four Jibri workers are required. On AWS EC2, running multiple Jibri containers on one host may have audio limitations because ALSA loopback may not be available on the AWS kernel.
+-> One Jibri can handle one active recording. For four simultaneous recordings, four Jibri workers are required. On AWS EC2, running multiple Jibri containers on one host may have audio limitations because ALSA loopback may not be available on the AWS kernel.
+-> So it is recommended to scale recorders on any other server rather than any Cloud Server.
+-> One more thing to note in our practical we have used AWS Instance type m7i-flex-large which is  not enough for multiple recorders. So use that instance type which is full of resources so that multiple recorders can easily run!
