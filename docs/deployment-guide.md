@@ -42,11 +42,17 @@ sudo apt install -y ca-certificates curl gnupg unzip
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl enable docker
 sudo systemctl start docker
+docker --version
+docker compose version
+
 ```
 
 ## Step 4: Start Jitsi
@@ -56,7 +62,7 @@ On the Jitsi EC2:
 ```bash
 cd jitsi
 cp .env.example .env
-nano .env
+vi .env
 docker compose -f docker-compose.yml up -d
 ```
 
@@ -82,7 +88,7 @@ On the Jibri EC2:
 ```bash
 cd jibri
 cp .env.example .env
-nano .env
+vi .env
 docker compose -f jibri.yml up -d
 ```
 
@@ -90,7 +96,7 @@ Verify:
 
 ```bash
 docker ps
-docker logs -f jibri1
+docker logs -f jibri
 ```
 
 ## Step 6: Connectivity Checks
@@ -98,6 +104,7 @@ docker logs -f jibri1
 From Jibri EC2:
 
 ```bash
+ping your-domain.example.com
 nc -zv your-domain.example.com 443
 nc -zv your-domain.example.com 5222
 ```
